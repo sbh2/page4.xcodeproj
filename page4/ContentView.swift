@@ -15,24 +15,11 @@ struct ContentView: View {
     @State private var Expand = false
     @State var title =  "Remind Me"
 
-    init() {
-        UITableViewCell.appearance().backgroundColor = UIColor.clear
-        UITableView.appearance().backgroundColor = .clear
-
-    
-    }
+   
     var body: some View {
         
         NavigationView{
-            
-            ZStack{
-                LinearGradient(gradient: Gradient(colors: [Color("Colore"),Color("Colort")]),
-                               startPoint: .top,
-                               endPoint: .bottom)
-                .ignoresSafeArea(.all)
-             
-                .navigationTitle("Add Your Event")
-                
+         
                 VStack(alignment: .center, spacing: 20){
                     Form{
                         Section{
@@ -80,20 +67,20 @@ struct ContentView: View {
                             }
                             Section{
                                 TextField("Notes", text: $Notes)
-                                    .foregroundColor(.red)
+                                    .foregroundColor(.black)
                             }
                             
                         }
 
-                    }.scrollContentBackground(.hidden)
+                    }
 
                 }
               
                 
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading){
-                        Button("Cancle"){
-                            print("Cancle Tapd")
+                        Button("Delete"){
+                            print("Delete Tapd")
                         }
                         .foregroundColor(.red)
                     }
@@ -101,17 +88,17 @@ struct ContentView: View {
                 
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing){
-                        Button("Add"){
-                            print("Add Tapd")
+                        Button("Done"){
+                            print("Done Tapd")
                         }
                         
                     }
                 }
-                
+                .navigationTitle("Add Your Event")
             }
         }
         }
-    }
+    
 
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
